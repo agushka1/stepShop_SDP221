@@ -1,17 +1,82 @@
 from django.shortcuts import render
 
+
 def index(request):
-    return render(request, 'index.html')
+    title = "Главная"
+
+    links_menu = [
+        {'link': 'index', 'name': 'HOME'},
+        {'link': 'products:index', 'name': 'PRODUCTS'},
+        {'link': 'about', 'name': 'ABOUT US'},
+        {'link': 'contacts', 'name': 'CONTACT US'}
+    ]
+
+    context = {
+        'title': title,
+        'links_menu': links_menu,
+    }
+
+    return render(request, 'index.html', context)
+
 
 def about(request):
-    return render(request, 'about.html')
+    title = "О нас"
+
+    links_menu = [
+        {'link': 'index', 'name': 'HOME'},
+        {'link': 'products:index', 'name': 'PRODUCTS'},
+        {'link': 'about', 'name': 'ABOUT US'},
+        {'link': 'contacts', 'name': 'CONTACT US'}
+    ]
+
+    context = {
+        'title': title,
+        'links_menu': links_menu,
+    }
+
+    return render(request, 'about.html', context)
+
 
 def contacts(request):
-    return render(request, 'contacts.html')
+    title = "Контакты"
 
-def products(request):
-    return render(request, 'products.html')
+    links_menu = [
+        {'link': 'index', 'name': 'HOME'},
+        {'link': 'products:index', 'name': 'PRODUCTS'},
+        {'link': 'about', 'name': 'ABOUT US'},
+        {'link': 'contacts', 'name': 'CONTACT US'}
+    ]
+
+    context = {
+        'title': title,
+        'links_menu': links_menu,
+    }
+
+    return render(request, 'contacts.html', context)
+
 
 def product(request):
-    return render(request, 'product.html')
+    title = "Покупка продукта"
+
+    context = {'title': title}
+
+    return render(request, 'product.html', context)
+
+
+def products(request):
+    title = "Каталог продуктов"
+
+    links_menu = [
+        {'link': 'index', 'name': 'HOME'},
+        {'link': 'products:index', 'name': 'PRODUCTS'},
+        {'link': 'about', 'name': 'ABOUT US'},
+        {'link': 'contacts', 'name': 'CONTACT US'}
+    ]
+
+    context = {
+        'title': title,
+        'links_menu': links_menu,
+    }
+
+    return render(request, 'products.html', context)
 
